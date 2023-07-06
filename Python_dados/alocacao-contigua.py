@@ -10,12 +10,12 @@ def buscaLista(k, L, n):
     return indiceL
 
 
-l = ['Joel', 'Julia', 'Matias']
+l = ['Joel', 'Edisvanei', 'Cleberson']
 
-buscando = buscaLista('Matias', l, len(l))
+buscando = buscaLista('Cleberson', l, len(l))
 print(buscando)
 
 # Outra forma
-nomes = ['Joel', 'Julia', 'Matias']
-i = nomes.index('Julia')
+nomes = ['Joel', 'Edisvanei', 'Cleberson']
+i = nomes.index('Edisvanei')
 print(i)
