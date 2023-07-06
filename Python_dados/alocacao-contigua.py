@@ -1,3 +1,4 @@
+# Tratando de uma lista estática
 
 def buscaLista(k, L, n):
     i = 0
