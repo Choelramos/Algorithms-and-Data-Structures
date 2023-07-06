@@ -1,6 +1,6 @@
 # Cada corte depois do comentário é um teste
 
-nomes = ["Joel", "Julia", "Matias"]
+nomes = ["Joel", "Edisvanei", "Cleberson"]
 print(nomes)
 
 x = nomes[2]
