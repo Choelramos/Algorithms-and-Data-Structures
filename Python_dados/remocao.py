@@ -13,11 +13,13 @@ def removeL(k, L, n):
         return -1
     i = posRemocao
     while i < n - 1:
-        Lista[i] = Lista[i + 1]
+        L[i] = L[i + 1]
         i = i + 1
     L.pop(n - 1)
     return posRemocao
 
 
 lista = [1, 3, 2, 7, 8, 5]
-removendo = removeL(1, lista, len(lista))
+removeL(3, lista, len(lista))
+print(lista)
+
