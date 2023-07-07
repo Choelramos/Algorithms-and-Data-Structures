@@ -58,15 +58,45 @@ class ListaEncadeada:
                 noAtual = noAtual.proximo
         return - 1
 
+    def insereOrdenada(self, novoNo):
+        noAtual = self.cabeca
+        if noAtual.chave > novoNo.chave:
+            novoNo.proximo = self.cabeca
+            self.cabeca = novoNo
+            return 0
+        if noAtual.proximo is not None:
+            while noAtual.chave < novoNo.chave:
+                if noAtual.proximo is None:
+                    noAtual.proximo = novoNo
+                    return 0
+                noAnterior = noAtual
+                noAtual = noAtual.proximo
+        novoNo.proximo = noAtual
+        noAnterior.proximo = novoNo
 
 
+# Testando implementação
 
 
+e0 = No(0, 'Zeus')
+Lista = ListaEncadeada(e0)
+k0 = Lista.busca(0)
+print(k0.valor)
 
+print()
 
+e1 = No(1, 'Poseidon')
+Lista.insereFinal(e1)
+Lista.print()
 
+print()
 
+e2 = No(-1, 'Hades')
+Lista.insereInicio(e2)
+Lista.print()
 
+print()
 
-
-
+e3 = No(1, 'Ares')
+Lista.insereOrdenada(e3)
+Lista.print()
