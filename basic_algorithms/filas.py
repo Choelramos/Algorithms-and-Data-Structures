@@ -3,6 +3,13 @@ Os métodos para insersão e remoção da lista contígua não foram implementad
 É importante notar que o métodos busca (também não implementado), é identico da lista comum"""
 
 
+class No:
+    def __init__(self, chave, valor):
+        self.chave = chave
+        self.valor = valor
+        self.proximo = None
+
+
 class FilaEncadeada:
     def __init__(self, inicio=None):
         self.inicio = inicio
