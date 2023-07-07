@@ -10,8 +10,8 @@ class FilaEncadeada:
 
     def insere(self, novoNo):  # Inserindo na lista encadeada
         if self.inicio is None:
-            var = self.inicio == novoNo
-            var = self.final == novoNo
+            self.inicio = novoNo
+            self.final = novoNo
         else:
             self.final.proximo = novoNo
             self.final = novoNo
@@ -60,4 +60,3 @@ def removefila():
     else:
         inicioFila = (inicioFila + 1) % maxFila
     return k
-
