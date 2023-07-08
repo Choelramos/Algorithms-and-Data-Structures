@@ -15,6 +15,12 @@ class FilaEncadeada:
         self.inicio = inicio
         self.final = inicio
 
+    def print(self):
+        current = self.inicio
+        while current:
+            print(current.valor)
+            current = current.proximo
+
     def insere(self, novoNo):  # Inserindo na lista encadeada
         if self.inicio is None:
             self.inicio = novoNo
@@ -35,6 +41,7 @@ class FilaEncadeada:
 # Enserindo na lista contígua:
 
 
+"""
 def insereFila(novoNo):
     global inicioFila
     global maxFila
@@ -67,3 +74,4 @@ def removefila():
     else:
         inicioFila = (inicioFila + 1) % maxFila
     return k
+"""
