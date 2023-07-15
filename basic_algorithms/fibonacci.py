@@ -26,5 +26,16 @@ def fib_iter(n):
 
 
 # print(fib_iter(100))
-# print(fib_iter(200))
 
+# Este exemplo também é rápido, complexidade O(n)
+# Esse método usa programação dinâmica
+
+def fib_list(n):
+    assert n >= 0
+    list_results = [0, 1]
+    for i in range(2, n+1):
+        list_results.append(list_results[i-1] + list_results[i-2])
+    return list_results
+
+
+print(fib_list(100))
