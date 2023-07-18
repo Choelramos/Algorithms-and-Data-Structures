@@ -1,6 +1,6 @@
 """ Aqui colocarei alguns exemplos de inserção, busca e remoção em filas
 Os métodos para insersão e remoção da lista contígua não foram implementados
-É importante notar que o métodos busca (também não implementado), é identico da lista comum"""
+É importante notar que os métodos busca (também não implementado), é identico da lista comum"""
 
 
 class No:
