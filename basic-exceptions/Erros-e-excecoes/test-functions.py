@@ -43,4 +43,28 @@ def function_list(food):
 fruits = ["Banana", "Aple", "Orange"]
 function_list(fruits)
 
+"""Using the return value"""
 
+
+def return_values(x):
+    return 5 ** 2 + x
+
+
+print(return_values(2))
+print()
+
+"""Recursion.
+Recursion is a common mathematical and programming concept. It means that a functin calls itself.
+This has the benefit of meaning that you can loop through data to reach a result"""
+
+
+def tri_recursion(k):
+    if k > 0:
+        result = k + tri_recursion(k - 1)
+        print(result)
+    else:
+        result = 0
+    return result
+
+
+tri_recursion(3)
