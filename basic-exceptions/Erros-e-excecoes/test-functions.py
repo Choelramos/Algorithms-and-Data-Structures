@@ -55,7 +55,8 @@ print()
 
 """Recursion.
 Recursion is a common mathematical and programming concept. It means that a functin calls itself.
-This has the benefit of meaning that you can loop through data to reach a result"""
+This has the benefit of meaning that you can loop through data to reach a result.
+I trying to understand how its works writing various exemples bellow"""
 
 
 def tri_recursion(k):
@@ -67,4 +68,35 @@ def tri_recursion(k):
     return result
 
 
-tri_recursion(3)
+houses = ["Joel's house", "Julia's houses", "Matias's houses"]
+
+
+def deliver_presents_recursively(houses):
+    if len(houses) == 1:
+        house = houses[0]
+        print("Delivering presents to", house)
+    else:
+        mid = len(houses) // 2
+        first_half = houses[:mid]
+        second_half = houses[mid:]
+
+        deliver_presents_recursively(first_half)
+        deliver_presents_recursively(second_half)
+
+
+deliver_presents_recursively(houses)
+
+
+"Recursive function implemented in Python for calcula n!"
+
+
+def recursion(n):
+    # case: 1! = 1
+    if n == 1:
+        return n
+    # n * (n - 1)!
+    else:
+        return n * recursion(n - 1)
+
+
+print(recursion(5))
