@@ -5,7 +5,8 @@ def myfunction(*name):
     print("The name is " + name[1])
 
 
-myfunction("Jo", "Ju", "Ma")
+# My implementation:
+# myfunction("Jo", "Ju", "Ma")
 
 
 """Arbitrary Keyword Arguments, **kwargs
@@ -17,7 +18,8 @@ def my_other_functio(**name):
     print("Hes first name is: " + name["first"])
 
 
-my_other_functio(name="Ju Ju", first="Ju")
+# My implementation:
+# my_other_functio(name="Ju Ju", first="Ju")
 
 
 """Default parameter Value
@@ -28,8 +30,9 @@ def another_function(country="Brasil"):
     print("I am from " + country)
 
 
-another_function()
-another_function("Japan")
+# My implementation:
+# another_function()
+# another_function("Japan")
 
 
 """A sample list of arguments"""
@@ -41,7 +44,8 @@ def function_list(food):
 
 
 fruits = ["Banana", "Aple", "Orange"]
-function_list(fruits)
+# My implementation
+# function_list(fruits)
 
 """Using the return value"""
 
@@ -49,9 +53,6 @@ function_list(fruits)
 def return_values(x):
     return 5 ** 2 + x
 
-
-print(return_values(2))
-print()
 
 """Recursion.
 Recursion is a common mathematical and programming concept. It means that a functin calls itself.
@@ -67,8 +68,8 @@ def tri_recursion(k):
         result = 0
     return result
 
-
-houses = ["Joel's house", "Julia's houses", "Matias's houses"]
+# My implementation:
+# tri_recursion(5)
 
 
 def deliver_presents_recursively(houses):
@@ -84,10 +85,11 @@ def deliver_presents_recursively(houses):
         deliver_presents_recursively(second_half)
 
 
-deliver_presents_recursively(houses)
+houses = ["Joel's house", "Julia's houses", "Matias's houses"]
+# My implementation:
+# deliver_presents_recursively(houses)
 
-
-"Recursive function implemented in Python for calcula n!"
+"Recursive function implemented in Python for calcula n! bellow"
 
 
 def recursion(n):
@@ -99,4 +101,38 @@ def recursion(n):
         return n * recursion(n - 1)
 
 
-print(recursion(5))
+# My implementation:
+# print(recursion(5))
+
+"""Keeping the state"""
+
+
+def sum_recursive(current_number, accumulated_sum):
+    if current_number == 11:
+        return accumulated_sum
+    else:
+        return sum_recursive(current_number + 1, accumulated_sum + current_number)
+
+# My implementation:
+# print(sum_recursive(1, 0))
+
+
+"""See how to keep the state"""
+
+num_atual = 1
+num_acumulado = 0
+
+
+def soma_recursiva():
+    global num_atual
+    global num_acumulado
+    if num_atual == 11:
+        return num_acumulado
+    else:
+        num_acumulado = num_acumulado + num_atual
+        num_atual = num_atual + 1
+        return soma_recursiva()
+
+
+print(soma_recursiva())
+
