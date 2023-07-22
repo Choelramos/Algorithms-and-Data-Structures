@@ -134,5 +134,6 @@ def soma_recursiva():
         return soma_recursiva()
 
 
-print(soma_recursiva())
+# My implementation:
+# print(soma_recursiva())
 

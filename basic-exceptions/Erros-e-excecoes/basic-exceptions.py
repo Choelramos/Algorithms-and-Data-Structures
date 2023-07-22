@@ -39,13 +39,37 @@ import sys
 
 """The else clause. It is useful for code that must be executed if the try clause
 does note raise on exception. For exemple:"""
-for arg in sys.argv[1:]:
-    try:
-        f = open(arg, 'r')
-    except OSError:
-        print("Cannot open", arg)
-    else:
-        print(arg, 'has', len(f.readline()), 'lines')
-        f.close()
+# for arg in sys.argv[1:]:
+#   try:
+#       f = open(arg, 'r')
+#   except OSError:
+#       print("Cannot open", arg)
+#   else:
+#       print(arg, 'has', len(f.readline()), 'lines')
+#        f.close()
+
+"""If an unhandled exception occurs inside an except section, it will have the except being handled
+attached to is and included in the error message:"""
+
+# try:
+#     open("database.sqlite")
+# except OSError:
+#     raise RuntimeError("Incapaz de lidar com o erro!")
 
 
+"""Defining Clean-up Actions.
+The cluase finally é more clomplex than that, for more information, visit the documentation in python.org.
+it is important to know that finally clause is always executed"""
+# try:
+#     raise KeyboardInterrupt
+# finally:
+#     print("Goodbye, world!")
+
+"""A group of exceptions:"""
+
+
+def f():
+    excs = [OSError('Error 1'), SystemError('Error 2')]
+    raise ExceptionGroup('There were problems', excs)
+
+f()
