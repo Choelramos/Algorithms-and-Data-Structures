@@ -1,4 +1,6 @@
-"""I'm learning about arrays, I've like that!"""
+"""I'm learning about arrays, I've like that!
+To find a specific knowledge, I've separate for # the topics"""
+import array
 import array as arr
 
 a = arr.array('i', [10, 20, 30])
@@ -94,5 +96,7 @@ print(ar.index(2))
 print("The index of 1st occurence of 1 is: ", end=" ")
 print(ar.index(1))
 
-
-
+# Counting elements in an Array:
+my_array = array.array('i', [1, 2, 3, 4, 5, 2, 3, 2])
+count = my_array.count(2)
+print("Number of occurrences of 2: ", count)
