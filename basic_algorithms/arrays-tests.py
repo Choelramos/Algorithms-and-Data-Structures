@@ -105,4 +105,18 @@ print("Number of occurrences of 2: ", count)
 print("Original Array: ", *my_array)
 my_array.reverse()
 print("Reversed array:", *my_array)
+print()
+print()
 
+# Extend elements:
+a = arr.array('i', [1, 2, 3, 4, 5])
+print("The before array extend: ", end=" ")
+for i in range(0, 5):
+    print(a[i], end=" ")
+print()
+
+a.extend([6, 7, 8, 9, 10])
+print("The array after extend: ", end=" ")
+for i in range(0, 10):
+    print(a[i], end=" ")
+print()
