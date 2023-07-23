@@ -32,3 +32,30 @@ print("Array b after insertion: ", end=" ")
 for i in b:
     print(i, end=" ")
 print()
+print()
+
+
+# To remove items, I'll use remove and pop methods:
+
+arry = arr.array('i', [1, 2, 3, 4, 5])
+print("The new created array is : ", end=" ")
+for i in range(0, 5):
+    print(arry[i], end=" ")
+
+print("\r")
+
+print("The popped element is: ", end=" ")
+print(arry.pop(4))
+
+print("The array after popping is:", end=" ")
+for i in range(0, 4):
+    print(arry[i], end=" ")
+
+print("\r")
+
+
+arry.remove(1)  # In this case I remove the number 1 of the array, not index 1
+print("After to remove method: ", end=" ")
+for i in range(0, 3):
+    print(arry[i], end=" ")
+
