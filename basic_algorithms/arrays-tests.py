@@ -100,3 +100,9 @@ print(ar.index(1))
 my_array = array.array('i', [1, 2, 3, 4, 5, 2, 3, 2])
 count = my_array.count(2)
 print("Number of occurrences of 2: ", count)
+
+# Reverse Elements:
+print("Original Array: ", *my_array)
+my_array.reverse()
+print("Reversed array:", *my_array)
+
