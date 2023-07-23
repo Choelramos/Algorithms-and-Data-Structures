@@ -27,13 +27,11 @@ for i in range(1, 3):
     print(b[i], end=" ")
 print()
 
-
 print("Array b after insertion: ", end=" ")
 for i in b:
     print(i, end=" ")
 print()
 print()
-
 
 # To remove items, I'll use remove and pop methods:
 
@@ -53,9 +51,31 @@ for i in range(0, 4):
 
 print("\r")
 
-
 arry.remove(1)  # In this case I remove the number 1 of the array, not index 1
 print("After to remove method: ", end=" ")
 for i in range(0, 3):
     print(arry[i], end=" ")
+print()
+print()
 
+
+# Slincing elements
+
+l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+ar = arr.array('i', l)
+print("Initial array: ")
+for i in ar:
+    print(i, end=" ")
+
+sliced_array = ar[3:8]
+print("\nElements sliced in a range 3-8: ", end=" ")
+print(sliced_array)
+
+sliced_array = ar[5:]
+print("Elements sliced from 5th element till the end: ", end=" ")
+print(sliced_array)
+
+sliced_array = ar[:]
+print("Printing all elements using slice operation: ", end=" ")
+print(sliced_array)
