@@ -79,3 +79,20 @@ print(sliced_array)
 sliced_array = ar[:]
 print("Printing all elements using slice operation: ", end=" ")
 print(sliced_array)
+print()
+print()
+
+# Searching the elements in array:
+# I'll use the same array above
+print("The array created is: ", end=" ")
+for i in range(0, 10):
+    print(ar[i], end=" ")
+print("\r")
+
+print("The index of 1st occurence of 2 is: ", end=" ")
+print(ar.index(2))
+print("The index of 1st occurence of 1 is: ", end=" ")
+print(ar.index(1))
+
+
+
