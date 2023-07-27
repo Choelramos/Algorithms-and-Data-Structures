@@ -101,6 +101,8 @@ class Node:
     def __repr__(self):
         return self.data
 
+# I modifield the __init__() to be more quicky insert nodes:
+
 
 class LinkedList:
     def __init__(self, nodes=None):
@@ -121,12 +123,38 @@ class LinkedList:
         nodes.append("None")
         return " -> ".join(nodes)
 
+# To iter in Linked list:
+
     def __iter__(self):
         node = self.head
         while node is not None:
             yield node
             node = node.next
 
+# Insert a new Node at the beginning
 
-llist = LinkedList(["0", "1", "2", "3", "4", "5"])
+    def add_first(self, node):
+        node.next = self.head
+        self.head = node
+
+# Insert a new Node at the end
+
+    def add_last(self, node):
+        current_node = self.head
+        if current_node:
+            while current_node.next:
+                current_node = current_node.next
+            current_node.next = node
+        else:
+            self.head = node
+
+
+llist = LinkedList(["1", "2", "3", "4", "5"])
 print(llist)
+
+llist.add_first(Node("0"))
+print(llist)
+
+llist.add_last(Node("6"))
+print(llist)
+
