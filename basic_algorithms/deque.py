@@ -148,6 +148,20 @@ class LinkedList:
         else:
             self.head = node
 
+# Insert between two Nodes:
+
+    def add_after(self, target_node_data, new_node):
+        if self.head is None:
+            raise Exception("List is empty")
+
+        for node in self:
+            if node.data == target_node_data:
+                new_node.next = node.next
+                node.next = new_node
+                return
+
+        raise Exception("Node with data '%s' not found" % target_node_data)
+
 
 llist = LinkedList(["1", "2", "3", "4", "5"])
 print(llist)
@@ -158,3 +172,5 @@ print(llist)
 llist.add_last(Node("6"))
 print(llist)
 
+llist.add_after("6", Node("7"))
+print(llist)
