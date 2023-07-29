@@ -79,24 +79,19 @@ class ListaEncadeada:
 
 
 e0 = No(0, 'Zeus')
-Lista = ListaEncadeada(e0)
-k0 = Lista.busca(0)
-print(k0.valor)
-
-print()
-
 e1 = No(1, 'Poseidon')
+Lista = ListaEncadeada(e0)
 Lista.insereFinal(e1)
 Lista.print()
-
 print()
 
-e2 = No(-1, 'Hades')
+e2 = No(1, 'Hades')
 Lista.insereInicio(e2)
 Lista.print()
-
 print()
 
-e3 = No(1, 'Ares')
-Lista.insereOrdenada(e3)
+Lista.removeLista(1)
 Lista.print()
+
+Lista.busca(1)
+print(Lista)
