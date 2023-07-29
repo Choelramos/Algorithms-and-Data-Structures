@@ -162,6 +162,8 @@ class LinkedList:
 
         raise Exception("Node with data {} not found".format(target_node_data))
 
+# With this function I can add nodes anywhere:
+
     def add_before(self, target_node_data, new_node):
         if self.head is None:
             raise Exception("List is empty")
@@ -172,9 +174,27 @@ class LinkedList:
         for node in self:
             if node.data == target_node_data:
                 prev_node.next = new_node
-                new_node.next - node
+                new_node.next = node
                 return
             prev_node = node
+        raise Exception("Node with data {} not found".format(target_node_data))
+
+# remove-to a node:
+
+    def remove_node(self, target_node_data):
+        if self.head is None:
+            raise Exception("List is empty")
+        if self.head.data == target_node_data:
+            self.head = self.head.next
+            return
+
+        previous_node = self.head
+        for node in self:
+            if node.data == target_node_data:
+                previous_node.next = node.next
+                return
+            previous_node = node
+
         raise Exception("Node with data {} not found".format(target_node_data))
 
 
@@ -193,5 +213,7 @@ print(llist)
 llist.add_before("0", Node("-1"))
 print(llist)
 
+llist.remove_node("-1")
+print(llist)
 
 
