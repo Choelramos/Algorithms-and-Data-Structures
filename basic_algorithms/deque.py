@@ -197,6 +197,23 @@ class LinkedList:
 
         raise Exception("Node with data {} not found".format(target_node_data))
 
+# To retieve an element from a specific position:
+
+    def get_element(self, element):
+        if self.head is None:
+            raise Exception("List is empty")
+
+        if self.head.data == element:
+            element = self.head.data
+            return element
+
+        current_node = self.head
+        while current_node.next is not None:
+            current_node = current_node.next
+            if current_node.data == element:
+                return print(f"Node {element} found.")
+        raise Exception("Node with data {} not found".format(element))
+
 
 llist = LinkedList(["1", "2", "3", "4", "5"])
 print(llist)
@@ -216,4 +233,5 @@ print(llist)
 llist.remove_node("-1")
 print(llist)
 
-
+llist.get_element("6")
+print(llist)
