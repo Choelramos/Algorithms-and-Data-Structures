@@ -22,6 +22,13 @@ class Queue:
         return self._elements.popleft()
 
 
+class Stack(Queue):
+    def dequeue(self):
+        return self._elements.pop()
+
+
+"""
+# Implemantarion of FIFO
 fifo = Queue("1st", "2nd", "3nd")
 print(len(fifo))
 
@@ -29,3 +36,13 @@ for element in fifo:
     print(element)
 
 print(len(fifo))
+"""
+
+"""
+# Implementation of LIFO
+"""
+
+lifo = Stack("1st", "2nd", "3nd")
+for element in lifo:
+    print(element)
+
