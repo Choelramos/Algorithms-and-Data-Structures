@@ -11,7 +11,7 @@ class Queue:
     def __len__(self):  # return the length of the elements
         return len(self._elements)
 
-    def __iter__(self):
+    def __iter__(self):  # If this, you'll make your class intances usable in a for loop
         while len(self) > 0:
             yield self.dequeue()
 
@@ -22,9 +22,10 @@ class Queue:
         return self._elements.popleft()
 
 
-fifo = Queue()
-fifo.enqueue("1st")
-fifo.enqueue("2nd")
-fifo.enqueue("3nd")
+fifo = Queue("1st", "2nd", "3nd")
+print(len(fifo))
 
-print(fifo.dequeue())
+for element in fifo:
+    print(element)
+
+print(len(fifo))
