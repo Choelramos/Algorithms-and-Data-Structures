@@ -1,6 +1,7 @@
 """I've study queues before, but never is bad weather to revise"""
 
 from collections import deque
+from heapq import heappop, heappush
 
 
 class Queue:
@@ -27,8 +28,19 @@ class Stack(Queue):
         return self._elements.pop()
 
 
+class PriorityQueue:
+    def __init__(self):
+        self._elements = []
+
+    def enqueue_with_priority(self, priority, value):
+        heappush(self._elements, (-priority, value))  # Python's heap is a min-heap. I use "-priority" to get around it
+
+    def dequeue(self):
+        return heappop(self._elements)[1]
+
+
 """
-# Implemantarion of FIFO
+# Implemantation of FIFO
 fifo = Queue("1st", "2nd", "3nd")
 print(len(fifo))
 
@@ -40,9 +52,33 @@ print(len(fifo))
 
 """
 # Implementation of LIFO
-"""
 
 lifo = Stack("1st", "2nd", "3nd")
 for element in lifo:
     print(element)
+"""
+
+
+"""
+# Implementation of Priority Queue.
+In this case i defined a system of the an car priority as example"""
+
+CRITICAL = 3
+IMPORTANT = 2
+NEUTRAL = 1
+
+messeges = PriorityQueue()
+messeges.enqueue_with_priority(IMPORTANT, "Windshield wipers turned on")
+messeges.enqueue_with_priority(NEUTRAL, "Radio station tuned in")
+messeges.enqueue_with_priority(CRITICAL, "Brake pedal depressed")
+messeges.enqueue_with_priority(IMPORTANT, "Hazerd lights turned on")
+
+print(messeges.dequeue())
+
+
+
+
+
+
+
 
