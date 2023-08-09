@@ -7,10 +7,9 @@ Here you've finding many examples mixed, without order """
 class Dog:
     species = "Canis lupus familiaris"
 
-    def __init__(self, name, age, breed):
+    def __init__(self, name, age):
         self.name = name
         self.age = age
-        self.breed = breed
 
     def __str__(self):
         return f"{self.name} is {self.age} years old"
@@ -19,8 +18,26 @@ class Dog:
         return f"{self.name} says {sound}"
 
 
-pandora = Dog('Pandora', '2', 'Pitbull')
-print(pandora)
+class Pitbull(Dog):
+    pass
 
-print(pandora.breed)
+
+class Pinshcer(Dog):
+    pass
+
+
+class Dogue(Dog):
+    pass
+
+
+pandora = Pitbull('Pandora', 2)  # instantiating the object
+titica = Pinshcer('Titica', 10)
+scooby = Dogue('Scooby Doo', 5)
+
+
+print(pandora)
 print(pandora.speak('Au au'))
+
+print(type(pandora))  # show which class a given object belongs to
+print(isinstance(pandora, Dog))  # The method says for yourself
+
