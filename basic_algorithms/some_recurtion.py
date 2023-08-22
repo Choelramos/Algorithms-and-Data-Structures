@@ -49,8 +49,20 @@ def factorial(n):
     return 1 if n <= 1 else n * factorial(n - 1)
 """
 
-# Implementing the method to timeit "10000x":
-timeit("factorial(4)", setup=setup_string, number=10000)
+""" Implementing the method to timeit "10000x":
+print(timeit("factorial(4)", setup=setup_string, number=10000))
+"""
 
+
+# Iterative implementation
+setup_string2 = """
+print("Iterative:")
+def factorial(n):
+    return_value = 1
+    for i in range(2, n + 1):
+        return_value *= i
+    return return_value
+"""
+print(timeit("factorial(4)", setup=setup_string2, number=10000))
 
 
