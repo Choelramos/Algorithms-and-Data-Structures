@@ -62,7 +62,39 @@ def factorial(n):
     for i in range(2, n + 1):
         return_value *= i
     return return_value
-"""
-print(timeit("factorial(4)", setup=setup_string2, number=10000))
 
+# Implementation:
+print(timeit("factorial(4)", setup=setup_string2, number=10000))
+"""
+"""=================================================================================================================="""
+
+
+# Function to merge two different arrays:
+def merge(left, right):
+    if len(left) == 0:
+        return right
+
+    if len(right) == 0:
+        return left
+
+    result = []
+    index_left = index_right = 0
+
+    while len(result) < len(left) + len(right):
+        if left[index_left] <= right[index_right]:
+            result.append(left[index_left])
+            index_left += 1
+        else:
+            result.append(right[index_right])
+            index_right += 1
+
+        if index_right == len(right):
+            result += right[index_left:]
+            break
+
+        if index_left == len(left):
+            result += left[index_right:]
+            break
+
+    return result
 
