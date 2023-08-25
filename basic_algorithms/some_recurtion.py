@@ -53,7 +53,6 @@ def factorial(n):
 print(timeit("factorial(4)", setup=setup_string, number=10000))
 """
 
-
 # Iterative implementation
 setup_string2 = """
 print("Iterative:")
@@ -69,6 +68,7 @@ print(timeit("factorial(4)", setup=setup_string2, number=10000))
 """=================================================================================================================="""
 
 
+# I'll create below, two different functions for Merge Sort
 # Function to merge two different arrays:
 def merge(left, right):
     if len(left) == 0:
@@ -89,12 +89,27 @@ def merge(left, right):
             index_right += 1
 
         if index_right == len(right):
-            result += right[index_left:]
+            result += left[index_left:]
             break
 
         if index_left == len(left):
-            result += left[index_right:]
+            result += right[index_right:]
             break
 
     return result
 
+
+def merge_sort(array):
+    if len(array) < 2:
+        return array
+
+    midpoint = len(array) // 2
+
+    return merge(
+        left=merge_sort(array[:midpoint]),
+        right=merge_sort(array[midpoint:]))
+
+
+a = [5, 2, 9, 4, 1, 3]
+
+print(merge_sort(a))
