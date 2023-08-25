@@ -1,4 +1,5 @@
-from timeit import timeit
+from random import randint
+from timing_code import run_sorting_algorithm
 
 
 # Simple function to count down to zero
@@ -99,6 +100,7 @@ def merge(left, right):
     return result
 
 
+# Here I'll divide up over two the array
 def merge_sort(array):
     if len(array) < 2:
         return array
@@ -110,6 +112,43 @@ def merge_sort(array):
         right=merge_sort(array[midpoint:]))
 
 
+""" Implementation and timeit Merge Sort
 a = [5, 2, 9, 4, 1, 3]
 
 print(merge_sort(a))
+
+
+ARRAY_LENGTH = 1000
+# Let's go timing this Merge Sort
+if __name__ == "__main__":
+    array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
+
+    run_sorting_algorithm(algorithm="merge_sort", array=array)
+=================================================================="""
+
+
+# Now, I will implement the Quick Sort Algorithm
+def quicksort(array):
+    if len(array) < 2:
+        return array
+
+    low, same, high = [], [], []
+
+    pivot = array[randint(0, len(array) - 1)]
+
+    for item in array:
+        if item < pivot:
+            low.append(item)
+        elif item == pivot:
+            same.append(item)
+        elif item > pivot:
+            high.append(item)
+
+    return quicksort(low) + same + quicksort(high)
+
+
+"""My implementation of quicksort
+a = [5, 6, 1, 2, 8, 3, 4, 7]
+print(quicksort(a))
+
+"""
