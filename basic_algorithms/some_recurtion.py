@@ -152,3 +152,52 @@ a = [5, 6, 1, 2, 8, 3, 4, 7]
 print(quicksort(a))
 
 """
+
+# Now, I'll traverse a list of names and pick up the leafs
+
+names = [
+    "Adam",
+    [
+        "Bob",
+        [
+            "Chet",
+            "Cat",
+        ],
+        "Barb",
+        "Bert"
+    ],
+    "Alex",
+    [
+        "Bea",
+        "Bill"
+    ],
+    "Ann"
+]
+
+"""Some tests to understand if it is an instance
+print(names)
+print(isinstance(names[1][1], list))
+print(names[1][1])
+print()
+"""
+
+
+# Function to count leaf elements
+def count_leaf_items(item_list):
+    count = 0
+    print(f"List: {item_list}")
+    for item in item_list:
+        if isinstance(item, list):
+            print("Encountered sublist")
+            count += count_leaf_items(item)
+        else:
+            print(f"Conted leaf item \"{item}\"")
+            count += 1
+
+    print(f"-> Returning count {count}")
+    return count
+
+
+# Implementation
+print(count_leaf_items(names))
+
