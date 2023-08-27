@@ -231,5 +231,19 @@ def count_leaf_items2(item_list):
 # Implementation with the same result of recursive version
 # print(count_leaf_items2(names))
 
+"""Samples examples of palindrome functions
+with and without recursion. In this caso recursive
+is not necessary, but interesting to learn"""
 
 
+# Without recursion:
+def is_palindrome(word):
+    return word == word[::-1]
+
+
+# With recursion
+def is_palindrome_recursive(word):
+    if len(word) <= 1:
+        return True
+    else:
+        return word[0] == word[-1] and is_palindrome_recursive(word[1:-1])
