@@ -199,5 +199,37 @@ def count_leaf_items(item_list):
 
 
 # Implementation
-print(count_leaf_items(names))
+# print(count_leaf_items(names))
+
+# Now I'll traverse the list Non-Recursively
+# I admit it I didn't understand very well how do this works
+
+def count_leaf_items2(item_list):
+    count = 0
+    stack = []
+    current_list = item_list
+    i = 0
+
+    while True:
+        if i == len(current_list):
+            if current_list == item_list:
+                return count
+            else:
+                current_list, i = stack.pop()
+                i += 1
+                continue
+
+        if isinstance(current_list[i], list):
+            stack.append([current_list, i])
+            current_list = current_list[i]
+            i = 0
+        else:
+            count += 1
+            i += 1
+
+
+# Implementation with the same result of recursive version
+# print(count_leaf_items2(names))
+
+
 
