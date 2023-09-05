@@ -1,8 +1,7 @@
 import datetime
-import time
+
 
 class Family:
-
     raise_amount = 1.05
     num_of_members = 0
 
@@ -37,20 +36,47 @@ class Family:
         return False
 
 
+# Test Inheritance
+class Son(Family):
+    def __init__(self, name, age, salary, school):
+        super().__init__(name, age, salary)
+        self.school = school
+
+    @staticmethod
+    def is_at_school(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return False
+
+
+class Pet(Family):
+    def __init__(self, name, age, breed, dogs=None):
+        super().__init__(name, age, breed)
+        self.breed = breed
+        if dogs is None:
+            self.dogs = []
+        else:
+            self.dogs = dogs
+
+    def add_dog(self, dog):
+        if dog not in self.dogs:
+            self.dogs.append(dog)
+
+    def rem_dog(self, dog):
+        if dog in self.dogs:
+            self.dogs.remove(dog)
+
+    def sit_down(self):
+        return print(self.name + ' is sit down!')
+
+    def roll(self):
+        return print(self.name + ' is rolling')
+
+
 # Tests implements:
-joel = Family('Joel', 27, 5000)
-julia = Family('Julia', 22, 6000)
+joel = Family('Joel', 27, 50000)
+julia = Family('Julia', 22, 60000)
 
-# fam_string1 = 'Pandora-3-0'
-# fam_string2 = 'Matias-1-12000'
-# new_member = Family.from_string(fam_string1)
+pandora = Pet('Pandora', 3, 'Pitbull')
 
-# print(new_member.email)
-# print(julia.raise_amount)
-# print(joel.raise_amount)
-# print(joel.__dict__)
-
-# Default date Year/Month/Day
-my_date = datetime.date(2023, 9, 5)
-
-print(Family.is_busy(my_date))
+print(pandora.roll())
