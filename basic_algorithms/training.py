@@ -1,3 +1,6 @@
+import datetime
+import time
+
 class Family:
 
     raise_amount = 1.05
@@ -26,18 +29,28 @@ class Family:
         name, age, salary = fam_string.split('-')
         return cls(name, age, salary)
 
+    # To know if the people in the family are busy
+    @staticmethod
+    def is_busy(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return True
+        return False
+
 
 # Tests implements:
-
 joel = Family('Joel', 27, 5000)
 julia = Family('Julia', 22, 6000)
 
-fam_string1 = 'Pandora-3-0'
-fam_string2 = 'Matias-1-12000'
+# fam_string1 = 'Pandora-3-0'
+# fam_string2 = 'Matias-1-12000'
+# new_member = Family.from_string(fam_string1)
 
-new_member = Family.from_string(fam_string1)
-
-print(new_member.email)
-print(julia.raise_amount)
-print(joel.raise_amount)
+# print(new_member.email)
+# print(julia.raise_amount)
+# print(joel.raise_amount)
 # print(joel.__dict__)
+
+# Default date Year/Month/Day
+my_date = datetime.date(2023, 9, 5)
+
+print(Family.is_busy(my_date))
