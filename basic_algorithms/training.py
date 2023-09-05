@@ -49,22 +49,22 @@ class Son(Family):
         return False
 
 
-class Pet(Family):
-    def __init__(self, name, age, breed, dogs=None):
-        super().__init__(name, age, breed)
-        self.breed = breed
-        if dogs is None:
-            self.dogs = []
+class Pets(Family):
+    def __init__(self, name, age, animal='dog', pets=None):
+        super().__init__(name, age, animal)
+        self.animal = animal
+        if pets is None:
+            self.pets = []
         else:
-            self.dogs = dogs
+            self.pets = pets
 
-    def add_dog(self, dog):
-        if dog not in self.dogs:
-            self.dogs.append(dog)
+    def add_dog(self, pet):
+        if pet not in self.pets:
+            self.pets.append(pet)
 
-    def rem_dog(self, dog):
-        if dog in self.dogs:
-            self.dogs.remove(dog)
+    def rem_dog(self, pet):
+        if pet in self.pets:
+            self.pets.remove(pet)
 
     def sit_down(self):
         return print(self.name + ' is sit down!')
@@ -77,6 +77,6 @@ class Pet(Family):
 joel = Family('Joel', 27, 50000)
 julia = Family('Julia', 22, 60000)
 
-pandora = Pet('Pandora', 3, 'Pitbull')
+pandora = Pets('Pandora', 3)
 
-print(pandora.roll())
+print(pandora.animal)
