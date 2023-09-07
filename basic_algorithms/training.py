@@ -35,6 +35,16 @@ class Family:
             return True
         return False
 
+    # Some of the special method to represent my objects
+    def __repr__(self):
+        return f'{self.name}, {self.age}'
+
+    # def __str__(self):
+    #     return f'{self.email}, {self.salary}'
+
+    def __add__(self, other):
+        return self.salary + other.salary
+
 
 # Test Inheritance
 class Son(Family):
@@ -79,6 +89,5 @@ julia = Family('Julia', 22, 60000)
 
 pandora = Pets('Pandora', 3)
 
-print(pandora.animal)
-
-# make changes to test
+print(joel)
+print(joel.__add__(julia))
