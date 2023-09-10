@@ -8,9 +8,27 @@ class Family:
     def __init__(self, name, age, salary):
         self.name = name
         self.age = age
-        self.email = name + '.' + str(age) + '@' + 'family.com'
         self.salary = salary
         Family.num_of_members += 1
+
+    @property
+    def email(self):
+        return f'{self.name}.{self.age}@family.com'
+
+    # My Full name here is only the first name =]
+    @property
+    def fullname(self):
+        return f'{self.name}'
+
+    @fullname.setter
+    def fullname(self, title):
+        name = title
+        self.name = name
+
+    @fullname.deleter
+    def fullname(self):
+        print('Delete Name!')
+        self.name = None
 
     def full_information(self):
         return f'Name: {self.name}, Age: {self.age}, email: {self.email}, salary: {self.salary}'
@@ -89,5 +107,3 @@ julia = Family('Julia', 22, 60000)
 
 pandora = Pets('Pandora', 3)
 
-print(joel)
-print(joel.__add__(julia))
